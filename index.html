@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulário de Mentoria</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="form-container">
+    <h1>Formulário Mentoria <br> Banco de Dados - Iniciante</h1>
+    <form id="mentoriaForm">
+      <label for="name">Nome:</label>
+      <input type="text" id="name" name="name" required>
+      
+      <label for="email">E-mail:</label>
+      <input type="email" id="email" name="email" required>
+      
+      <label for="phone">Telefone:</label>
+      <input type="tel" id="phone" name="phone" required>
+      
+      <label for="nivel">Qual seu nível de conhecimento em SQL?</label>
+      <select id="nivel" name="nivel" required>
+        <option value="iniciante">Iniciante</option>
+        <option value="intermediario">Intermediário</option>
+        <option value="avancado">Avançado</option>
+      </select>
+      
+      <label>Qual dia você prefere para a mentoria?</label>
+      <div>
+        <input type="radio" id="segunda" name="dia" value="Segunda: 19h30" required>
+        <label for="segunda">Segunda: 19h30</label>
+      </div>
+      <div>
+        <input type="radio" id="quarta" name="dia" value="Quarta: 19h30">
+        <label for="quarta">Quarta: 19h30</label>
+      </div>
+      
+      <label for="pergunta1">Crie duas tabelas: uma para alunos (com nome do aluno) e outra para classes (Classe A e Classe B). Insira o nome de dois alunos:</label>
+      <textarea id="pergunta1" name="pergunta1"></textarea>
+      <div>
+        <input type="checkbox" id="naoSabe1" name="naoSabe1">
+        <label for="naoSabe1">Não sei responder</label>
+      </div>
+      
+      <label for="pergunta2">Como você faria um JOIN para trazer qual aluno pertence a qual classe?</label>
+      <textarea id="pergunta2" name="pergunta2"></textarea>
+      <div>
+        <input type="checkbox" id="naoSabe2" name="naoSabe2">
+        <label for="naoSabe2">Não sei responder</label>
+      </div>
+      
+      <button type="submit" id="submitButton">Enviar</button>
+    </form>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
