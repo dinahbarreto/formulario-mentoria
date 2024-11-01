@@ -2,7 +2,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('mentoriaForm');
     let formSubmitted = false; 
     let isMinimized = false; 
+    const formClosed = true; // Altere para "true" se o formulário não aceita mais inscrições
 
+    // Verifica se o formulário está fechado
+    if (formClosed) {
+        // Exibe a mensagem e desativa o formulário
+        form.innerHTML = "<p>Esse formulário não recebe mais inscrições.</p>";
+        return;
+    }
+
+    // Bloqueia seleção e cópia de texto
     document.addEventListener('selectstart', (e) => {
         e.preventDefault();
     });
@@ -28,7 +37,6 @@ document.addEventListener('DOMContentLoaded', () => {
         autoResizeTextarea(textarea);
     });
 
-    
     window.onblur = () => {
         if (!formSubmitted) { 
             isMinimized = true; 
@@ -36,7 +44,6 @@ document.addEventListener('DOMContentLoaded', () => {
             form.reset(); 
         }
     };
-
 
     window.onfocus = () => {
         isMinimized = false;
